@@ -30,10 +30,12 @@ for exp_dir in exp_dirs:
             df = pd.read_csv(eeg_file, delimiter=';')
             # Get the AUX_EKG column
             EKG = df['AUX_EKG']
+            EKG *= 1e-6  # Convert to microvolts
 
             # Pass it to neurokit2
-            rpeaks = nk.ecg_findpeaks(EKG, method='pantompkins')
-            quality = nk.ecg_quality(EKG, sampling_rate=500, rpeaks=rpeaks, method='zhao2018')
+            cleaned = nk.ecg_clean(EKG, sampling_rate=500, method="biosppy")
+            rpeaks = nk.ecg_findpeaks(cleaned, method='pantompkins')
+            quality = nk.ecg_quality(cleaned, sampling_rate=500, rpeaks=rpeaks, method='zhao2018')
 
             result_row[imac] = quality
         except (FileNotFoundError, pd.errors.EmptyDataError, KeyError):
