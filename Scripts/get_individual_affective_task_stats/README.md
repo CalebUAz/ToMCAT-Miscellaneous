@@ -1,6 +1,6 @@
-# EEG Data Processing
+# Affective Task Data Analysis
 
-This Python script is used to process EEG data from a collection of experiments. Each experiment consists of multiple stations (lion, tiger, leopard), and each station has an EEG data file.
+This script processes and visualizes data from individual affective task CSV files. It provides a hexbin plot, histograms, and bar graphs to analyze the arousal and valence scores from the data.
 
 ## Prerequisites
 
