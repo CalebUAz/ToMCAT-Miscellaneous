@@ -39,9 +39,9 @@ python script.py --input_path "/path/to/your/experiments" --output_path "/path/t
 
 Replace "/path/to/your/experiments" with the path to the directory containing your experiment directories. Like wise replace "/path/to/save/_" with path where you want the output to be. 
 
-The script will iterate over all the experiments and for each animal, it will read the EEG.csv file, compute the quality of the EEG data using neurokit2, and save the results in a CSV file named EKG_quality_results.csv in the same directory as your experiment directories.
+The script will iterate over all the experiments and for each iMac, it will read the EEG.csv file, compute the quality of the EEG data using neurokit2, and save the results in a CSV file named EKG_quality_results.csv in the same directory as your experiment directories.
 
-If an EEG file or an animal folder is missing, the script will skip it and continue processing the next one.
+If an EEG file or an iMac folder is missing, the script will skip it and continue processing the next one.
 
 ## Output
 
