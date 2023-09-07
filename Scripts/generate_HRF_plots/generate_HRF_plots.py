@@ -133,7 +133,7 @@ if __name__ == "__main__":
         "--p", required=True, help="Path to the directory with the fNIRS affective task data"
     )
     parser.add_argument(
-        "--o", type=float, default=0.001, help="Path to the directory to save fNIRS HRF"
+        "--o", required=True, help="Path to the directory to save fNIRS HRF"
     )
 
     args = parser.parse_args()
