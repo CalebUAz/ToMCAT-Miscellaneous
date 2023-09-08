@@ -90,6 +90,9 @@ def plot_save_fNIRS_HRF(df,output_path, filepath):
     plt.savefig(output_path)
     
 def parse_files(path, output_directory):
+    print("-------------------------------------------------------------------------------------------------")
+    print("Reading fNIRS affective task data from: {}".format(path))
+    print("-------------------------------------------------------------------------------------------------")
     ignore_df = pd.read_csv('./ignore_experimenter.csv')
 
     for root, dirs, files in os.walk(path):
@@ -123,7 +126,9 @@ def parse_files(path, output_directory):
                             # Combine the new directory path with the filename
                             output_path = os.path.join(new_dir, filename)
 
-                            plot_save_fNIRS_HRF(df,output_path, file_path)
+                            if df.shape[1] == 45:
+                                print("Reading fNIRS affective task data from: {}".format(file_path))
+                                plot_save_fNIRS_HRF(df,output_path, file_path)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
