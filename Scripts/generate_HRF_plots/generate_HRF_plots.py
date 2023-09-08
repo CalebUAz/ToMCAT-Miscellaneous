@@ -88,6 +88,7 @@ def plot_save_fNIRS_HRF(df,output_path, filepath):
     
     plt.tight_layout()
     plt.savefig(output_path)
+    print("Saving fNIRS HRF plot to {}".format(output_path))
     
 def parse_files(path, output_directory):
     print("-------------------------------------------------------------------------------------------------")
