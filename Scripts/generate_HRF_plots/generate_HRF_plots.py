@@ -112,6 +112,7 @@ def parse_files(path, output_directory):
                                 continue # Skip the rest and move to the next file
 
                             df = pd.read_csv(file_path)
+                            df.drop(columns='station', inplace=True)
 
                             # Extract the required sub-path
                             sub_path = os.path.join(*file_path.split(os.sep)[4:-1])  # The [4:-1] slice will vary based on your desired extraction
